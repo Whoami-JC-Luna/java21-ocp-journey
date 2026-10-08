@@ -43,3 +43,33 @@ This is interesting because we can see how this works at a lower level, and the 
 - **Runtime errors** only appear when the program runs. They can be more dangerous: the code compiles without problems, so the error can reach production if no test executes that case (there are no tests, the tests do not cover that case, or the error depends on real data or the environment).
 
 This is why tests are important: they help us find runtime errors before our users do.
+
+
+## Comments
+
+Java comments are ignored by the compiler, so they are not part of the bytecode and the JVM never sees them.
+Comments are used to give information or explain something about a class, method, variable or block of code, which makes the code easier to maintain.
+
+Comments are also used to hide code temporarily (for example, while testing something) and as `TODO` reminders.
+
+Java has three types of comments:
+
+| Type | Syntax | Used by Javadoc |
+|---|---|---|
+| Single-line | `// ...` | No |
+| Block | `/* ... */` | No |
+| Javadoc | `/** ... */` | Yes |
+
+### Good practices
+
+- **Code explains *what*, comments explain *why*.** With descriptive names for classes, methods and variables, the code explains itself: `calculateTotalPrice()` needs no comment, `calc()` does.
+- **A comment is useful** when it explains something the code cannot say: a decision, a limitation or an unusual case.
+- **Outdated comments are worse than no comments**, because nobody notices when they stop being true.
+- **Do not keep commented-out code.** If you comment out code because you do not need it, delete it. With version control (Git) you can always get it back from the history. Keeping old code "just in case" makes classes longer and harder to understand, and most of the time you never use it again.
+- **Unit tests also work as documentation:** well-written tests show how the code is used and what is expected.
+- **Javadoc** is used mainly for public classes and methods that other people will use.
+
+
+
+
+
